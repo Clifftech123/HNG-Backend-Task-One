@@ -4,9 +4,9 @@
   "description": "This repository contains a  solution for an HNG Backend  task one. The objective of the task was to create and host an API endpoint that takes two GET request query parameters: `slack_name` and `track`. The API should return specific information in JSON format, including Slack name, current day of the week, current UTC time, track, GitHub file URL, GitHub repo URL, and a success status code.",
   "main": "src/index.js",
   "scripts": {
-    "start": "node ./build/.js",
+    "start": "node ./build/index.js",
     "dev": "nodemon  ./src/index.ts",
-    "build": "npx  tsc  ."
+    "build": "npx tsc"
   },
   "keywords": [],
   "author": "",
