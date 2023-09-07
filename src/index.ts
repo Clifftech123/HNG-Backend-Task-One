@@ -31,7 +31,7 @@ const currentDate = new Date();
 const currentDay = currentDate.toLocaleDateString("en-US", {
   weekday: "long",
 });
-  const utcTime = currentDate.toISOString();
+const utcTime = currentDate.toISOString().slice(0, -5) + "Z";
   // Construct the GitHub URLs
   const githubRepoUrl = "https://github.com/Clifftech123/HNG-Backend-Task-One";
   const githubFileUrl = `${githubRepoUrl}https:/blob/main/src/index.ts`;
