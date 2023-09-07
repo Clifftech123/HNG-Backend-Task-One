@@ -27,10 +27,10 @@ app.get("/api", (req: Request, res: Response) => {
   }
 
   // Get the current day and UTC time
-  const currentDate = new Date();
-  const currentDay = currentDate.toLocaleDateString("en-US", {
-    weekday: "long",
-  });
+const currentDate = new Date();
+const currentDay = currentDate.toLocaleDateString("en-US", {
+  weekday: "long",
+});
   const utcTime = currentDate.toISOString();
   // Construct the GitHub URLs
   const githubRepoUrl = "https://github.com/Clifftech123/HNG-Backend-Task-One";
