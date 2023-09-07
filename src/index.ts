@@ -32,7 +32,6 @@ app.get("/api", (req: Request, res: Response) => {
     weekday: "long",
   });
   const utcTime = currentDate.toISOString();
-
   // Construct the GitHub URLs
   const githubRepoUrl = "https://github.com/Clifftech123/HNG-Backend-Task-One";
   const githubFileUrl = `${githubRepoUrl}https:/blob/main/src/index.ts`;
