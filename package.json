@@ -2,11 +2,11 @@
   "name": "hng-backend-task-one",
   "version": "1.0.0",
   "description": "This repository contains a  solution for an HNG Backend  task one. The objective of the task was to create and host an API endpoint that takes two GET request query parameters: `slack_name` and `track`. The API should return specific information in JSON format, including Slack name, current day of the week, current UTC time, track, GitHub file URL, GitHub repo URL, and a success status code.",
-  "main": "dist/index.js",
+  "main": "dist/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "start": "node dist/app.js"
+    "start": "node dist/main.js"
 
   },
   "keywords": [],

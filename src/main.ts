@@ -2,6 +2,9 @@ import express, { Request, Response } from "express";
 
 const app = express();
 
+
+const port = process.env.PORT || 3000;
+
 app.get("/api", (req: Request, res: Response) => {
   const { slack_name, track } = req.query;
 
@@ -52,8 +55,8 @@ app.get("/api", (req: Request, res: Response) => {
 });
 
 //  Running the server
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
 
 export default app;
