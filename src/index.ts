@@ -1,10 +1,8 @@
-const express = require("express");
+import express, { Request, Response } from "express";
 
 const app = express();
 
-const port = process.env.PORT || 3000;
-
-app.get("/api", (req, res) => {
+app.get("/api", (req: Request, res: Response) => {
   const { slack_name, track } = req.query;
 
   // Validate slack_name and track parameters
@@ -13,14 +11,19 @@ app.get("/api", (req, res) => {
     typeof slack_name !== "string" ||
     slack_name.trim().length === 0
   ) {
-    return res.status(400).json({
-      error: "slack_name parameter is required and must be a non-empty string",
-    });
+    return res
+      .status(400)
+      .json({
+        error:
+          "slack_name parameter is required and must be a non-empty string",
+      });
   }
   if (!track || typeof track !== "string" || track.trim().length === 0) {
-    return res.status(400).json({
-      error: "track parameter is required and must be a non-empty string",
-    });
+    return res
+      .status(400)
+      .json({
+        error: "track parameter is required and must be a non-empty string",
+      });
   }
 
   // Get the current day and UTC time
@@ -31,8 +34,8 @@ app.get("/api", (req, res) => {
   const utcTime = currentDate.toISOString();
 
   // Construct the GitHub URLs
-  const githubRepoUrl = "https://github.com/Clifftech123/HNG-Backend-Task-One";
-  const githubFileUrl = `${githubRepoUrl}/blob/main/src/app.ts`;
+  const githubRepoUrl = "https://github.com/username/repo";
+  const githubFileUrl = `${githubRepoUrl}/blob/main/file_name.ext`;
 
   // Construct the response JSON
   const responseJson = {
@@ -49,8 +52,8 @@ app.get("/api", (req, res) => {
 });
 
 //  Running the server
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
 });
 
-module.exports = app;
+export default app;
