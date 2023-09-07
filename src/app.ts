@@ -34,8 +34,8 @@ app.get("/api", (req: Request, res: Response) => {
   const utcTime = currentDate.toISOString();
 
   // Construct the GitHub URLs
-  const githubRepoUrl = "https://github.com/username/repo";
-  const githubFileUrl = `${githubRepoUrl}/blob/main/file_name.ext`;
+  const githubRepoUrl = "https://github.com/Clifftech123/HNG-Backend-Task-One";
+  const githubFileUrl = `${githubRepoUrl}/blob/main/src/app.ts`;
 
   // Construct the response JSON
   const responseJson = {
