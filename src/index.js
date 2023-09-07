@@ -1,11 +1,10 @@
-import express, { Request, Response } from "express";
+const express = require("express");
 
 const app = express();
 
-
 const port = process.env.PORT || 3000;
 
-app.get("/api", (req: Request, res: Response) => {
+app.get("/api", (req, res) => {
   const { slack_name, track } = req.query;
 
   // Validate slack_name and track parameters
@@ -14,19 +13,14 @@ app.get("/api", (req: Request, res: Response) => {
     typeof slack_name !== "string" ||
     slack_name.trim().length === 0
   ) {
-    return res
-      .status(400)
-      .json({
-        error:
-          "slack_name parameter is required and must be a non-empty string",
-      });
+    return res.status(400).json({
+      error: "slack_name parameter is required and must be a non-empty string",
+    });
   }
   if (!track || typeof track !== "string" || track.trim().length === 0) {
-    return res
-      .status(400)
-      .json({
-        error: "track parameter is required and must be a non-empty string",
-      });
+    return res.status(400).json({
+      error: "track parameter is required and must be a non-empty string",
+    });
   }
 
   // Get the current day and UTC time
@@ -59,4 +53,4 @@ app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
-export default app;
+module.exports = app;
